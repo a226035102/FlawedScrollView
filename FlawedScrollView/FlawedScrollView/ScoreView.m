@@ -24,6 +24,10 @@
         self.layer.borderColor = [UIColor blackColor].CGColor;
         self.layer.masksToBounds = YES;
         
+        // 把scrollView的layer光栅化
+        self.layer.shouldRasterize = YES;
+        self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        
         self.gradientLayer = [CAGradientLayer layer];
         self.gradientLayer.colors = @[(id)[UIColor yellowColor].CGColor, (id)[UIColor redColor].CGColor];
         self.gradientLayer.startPoint = CGPointMake(0.0, 0.5);

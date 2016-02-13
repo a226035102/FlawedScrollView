@@ -85,6 +85,11 @@
     self.customImageView.layer.shadowOpacity = 1.0;
     self.customImageView.layer.shadowRadius = 2.0;
     self.customImageView.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+
+    // 把customImageView的layer光栅化
+    self.customImageView.layer.shouldRasterize = YES;
+    self.customImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    
     [self.contentView addSubview:self.customImageView];
     [self.customImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView.mas_top).offset(10);
